@@ -15,9 +15,9 @@
 
 
 class Document
-	attr_accessor :author, :title, :content
+	attr_accessor :author, :title, :content #setters and getters
 
-	def initialize(attributes)
+	def initialize(attributes) # constructor
 		@author = attributes[:author]
 		@title = attributes[:title]
 		@content = attributes[:content]

@@ -14,5 +14,29 @@
 
 
 class Document
+	attr_accessor :author, :title, :content
+
+	def initialize(attributes)
+		@author = attributes[:author]
+		@title = attributes[:title]
+		@content = attributes[:content]
+	end
+	def words()
+		x = @content.split
+	end
+	def each_word()
+		#x=Document.new(:author => @author, :title => @title, :content => @content)	
+		words.each do |word|
+			yield word
+		end
+	end
 end
 
+
+a=Document.new(:author => "someone", :title => "my book", :content => "this is the content of my book")
+add_content = a
+p add_content.words
+
+a.each_word do |word|
+ puts word
+end
